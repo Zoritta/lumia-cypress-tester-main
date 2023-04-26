@@ -26,6 +26,7 @@
     "cypress": "10.7"
   },
   "dependencies": {
+    "Cypress": "npm:cypress@10.7",
     "express": "^4.18.2"
   }
 }
