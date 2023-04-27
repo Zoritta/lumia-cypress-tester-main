@@ -18,15 +18,15 @@ Feature: Check customer info is added correctly on the payment page
 
   Scenario: Adding postal code to post code bar
     When I click on the "Postnr" bar
-    And Type my "<post code>"
-    Then I can see my "<post code>" is added to the bar
+    And Type my "<postCode>"
+    Then I can see my "<postCode>" is added to the bar
 
   Scenario: Adding city to city bar
     When I click on the "Ort" bar
-    And Type my "<City>"
-    Then I can see my "<City>" is added to the bar
+    And Type my "<city>"
+    Then I can see my "<city>" is added to the bar
 
   Scenario: Adding Bank card number to the bar
     When I click on the "Kortnr" bar
-    And Type my "<bank card number>"
-    Then I can see my "<bank card number>" is added to the bar
+    And Type my "<bankCardNr>"
+    Then I can see my "<bankCardNr>" is added to the bar
