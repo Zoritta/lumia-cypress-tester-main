@@ -17,15 +17,6 @@ Feature: Adding items to shopping cart functionality
     Then A "taklampa" should be added to shopping cart
     And A "lampett" should be added to the cart
 
-
-  Scenario 1: Adding an item to the shopping cart
-
-  Navigate to the homepage of the website.
-  Search for a product in the search bar.
-  Click on the desired product to view its details.
-  Click on the "Add to Cart" button.
-  Verify that the item has been added to the shopping cart by checking the cart icon or cart page.
-
   Scenario: View shopping cart
     Given I have items in my shopping cart
     When I click the shopping cart icon

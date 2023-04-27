@@ -11,34 +11,27 @@ Feature: Check that the cart calculates sums correctly
     Then "2" Bordslampa should be added to the cart
     And the row sum should be calculated correctly
 
-  Scenario: Adding three Taklampa to cart and check rawsum
+  Scenario: Adding three Taklampa to cart and check rowsum
     When I search for "Taklampa"
     And I click the buy button "3" times
     Then "3" "Taklampa" should be added to the cart
     And the row sum should be calculated correctly
 
+  Scenario: Adding more number of Bordslampa in the cart and check rowsum
+    When I searched for "Bordslampa"
+    And I click buy button "<quantity>" time
+    Then "<quantity>" "Bordslampa" should be added to the cart
+    And  the cart should display the correct total price
 
+  Scenario: Adding three Spotlights to cart and check rowsum
+    When I Search for "Spotlight"
+    And click the buy button "3" times
+    Then "3" "Spotlight" should be added to the cart
+    And the cart should display the correct total price for "3" "Spotlight"
 
-  Scenario: Remove "1" "Golvlampa" from the cart
-    Given that I am on the start page
-    And that I have searched for the "Golvlampa"
-    When I click the buy button "2" time
-    Then "1" "Golvlampa" should be added to the cart
-    And I click the removeOne button "1" time
-    Then "1" "Golvlampa" should be left in the cart
+  Scenario: Adding two Golvlampa to the cart and check rowsum
+    When I search for "Golvlampa"
+    And click buy button "2" times
+    Then "2" "Golvlampa" should be added to the cart
+    And the cart should display the correct total price for "2" "Golvlampa"
 
-  Scenario: Remove "1" "Spotlight" from the cart
-    Given that I am on the start page
-    And that I have searched for the "Spotlight"
-    When I click the buy button "20" time
-    Then "20" "Spotlight" should be added to the cart
-    And I click the removeOne button "1" time
-    Then "19" "Spotlight" should be left in the cart
-
-  Scenario: Remove "19" "Lampett" from the cart
-    Given that I am on the start page
-    And that I have searched for the "Lampett"
-    When I click the buy button "20" time
-    Then "20" "Lampett" should be added to the cart
-    And I click the removeOne button "19" time
-    Then "1" "Lampett" should be left in the cart
