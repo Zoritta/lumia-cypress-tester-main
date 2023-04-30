@@ -1,14 +1,18 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
-Given('that I am on the payment page', () => {
-  cy.visit('/');
-});
 
-When('I click on the "namn" bar', () => {
+
+Given('I am on payment page', () => {
+
+  // find the buy button inside the product div
+  cy.find('button').contains('Gå till kassan')
+  // and click the button
+  cy.click();
+}
+);
+
+When('I click on the "namn" bar', (name) => {
   cy.get('#namn').click();
-});
-
-And('Type my {string}', (name) => {
   cy.get('#namn').type(name);
 });
 
@@ -16,66 +20,43 @@ Then('I can see my {string} is added to the bar', (name) => {
   cy.get('#namn').should('have.value', name);
 });
 
-Given('that I am on the payment page', () => {
-  cy.visit('/');
-});
 
-When('I click on the "Gatuadress" bar', () => {
+When('I click on the "Gatuadress" bar', (address) => {
   cy.get('#Gatuadress').click();
-});
-
-And('Type my {string}', (address) => {
   cy.get('#Gatuadress').type(address);
 });
 
-Then('I can see my {string} is added to the bar', (name) => {
+Then('I can see my {string} is added to the bar', (address) => {
   cy.get('#Gatuadress').should('have.value', address);
 });
 
-Given('that I am on the payment page', () => {
-  cy.visit('/');
-});
 
-When('I click on the "Postnr" bar', () => {
+When('I click on the "Postnr" bar', (postCode) => {
   cy.get('#Postnr').click();
-});
-
-And('Type my {string}', (postCode) => {
   cy.get('#Postnr').type(postCode);
 });
 
-Then('I can see my {string} is added to the bar', (name) => {
+Then('I can see my {string} is added to the bar', (postCode) => {
   cy.get('#Postnr').should('have.value', postCode);
 });
 
-Given('that I am on the payment page', () => {
-  cy.visit('/');
-});
 
-When('I click on the "Ort" bar', () => {
+
+When('I click on the "Ort" bar', (city) => {
   cy.get('#Ort').click();
-});
-
-And('Type my {string}', (city) => {
   cy.get('#Ort').type(city);
 });
 
-Then('I can see my {string} is added to the bar', (name) => {
+Then('I can see my {string} is added to the bar', (city) => {
   cy.get('#Ort').should('have.value', city);
 });
 
-Given('that I am on the payment page', () => {
-  cy.visit('/');
-});
 
-When('I click on the "Kortnr" bar', () => {
+When('I click on the "Kortnr" bar', (bankCardNr) => {
   cy.get('#Kortnr').click();
-});
-
-And('Type my {int}', (bankCardNr) => {
   cy.get('#Kortnr').type(bankCardNr);
 });
 
-Then('I can see my {string} is added to the bar', (name) => {
+Then('I can see my {string} is added to the bar', (bankCardNr) => {
   cy.get('#Kortnr').should('have.value', bankCardNr);
 });
