@@ -2,14 +2,13 @@ import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
 
 
-Given('I am on payment page', () => {
-
-  // find the buy button inside the product div
-  cy.find('button').contains('Gå till kassan')
-  // and click the button
-  cy.click();
-}
-);
+Given('I am on start page', () => {
+  cy.visit('/')
+    // find the buy button inside the product div
+    .find('button').contains('Gå till kassan')
+    // and click the button
+    .click();
+});
 
 When('I click on the "namn" bar', (name) => {
   cy.get('#namn').click();

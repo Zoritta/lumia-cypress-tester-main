@@ -4,7 +4,7 @@ Feature: Check customer info is added correctly on the payment page
   payment process
 
   Background:
-    Given I am on the payment page
+    Given I am on start page
 
   Scenario: Adding name to Name bar
     When I click on the "namn" bar
